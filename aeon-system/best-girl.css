@@ -1,0 +1,111 @@
+/*
+  welcome to the stylesheet for best girl's fanmade webpage
+  literally the least amount of CSS I ever wrote, but it just works; we don't need no damn libraries.
+*/
+body {
+  color:#333;
+  background:#DEF url(images/mishy-bg.png) repeat fixed;
+  font-size:15px;
+  font-family:'メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック','MS PGothic',"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Arial,sans-serif;
+  padding:0;
+  margin:0;
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+}
+
+
+/* our cute little Tio and Mishy who sit at the bottom of the screen */
+#tio, #mishy {
+  position:fixed;
+  z-index:1;
+  cursor:pointer;
+}
+
+#tio img, #mishy img {
+  height:100px;
+}
+
+#tio {
+  right:0px;
+  bottom:-11px;
+}
+
+#mishy {
+  left:0px;
+  bottom:-15px;
+}
+
+
+/* the slides for our beloved Tio Tot */
+.tio {
+  background-position:center;
+  background-size:cover;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  visibility:hidden;
+  opacity:0;
+  transition:1000ms;
+}
+
+.tio.actiove { /* acTIOve... I'm sorry for the terrible pun m(__)m */
+  visibility:visible;
+  opacity:1;
+}
+
+
+/* placeholder texts shown briefly while images get a few seconds to preload */
+#tio-placeholder {
+  color:#FFF;
+  font-size:42px;
+  font-weight:bold;
+  text-align:center;
+  height:100px;
+  margin-top:-100px;
+  position:fixed;
+  top:50%;
+  left:0;
+  right:0;
+  z-index:101;
+  opacity:1;
+  visibility:visible;
+  transition:1000ms;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     0px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+#tio-placeholder.loaded {
+  opacity:0;
+  visibility:hidden;
+}
+
+#tio-placeholder:after {
+  content:url(images/tio-and-mishy.png);
+  display:block;
+}
+
+
+/* for preloading our Tios */
+#preload {
+  width:1px;
+  height:1px;
+  visibility:hidden;
+  overflow:hidden;
+}
+
+
+/* responsive thingies */
+@media (max-width:1100px) {
+  #tio-placeholder { font-size:32px; }
+}
+
+@media (max-width:420px) {
+  #tio-placeholder { font-size:22px; }
+}

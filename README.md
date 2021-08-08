@@ -7,7 +7,7 @@ This is a small webpage/slideshow dedicated to my favorite character Tio Plato. 
 You can use it online or offline via the following links.
 
 - **Online:** https://sethclydesdale.github.io/tio-plato-is-the-best/
-- **Offline:** [Download](https://github.com/SethClydesdale/tio-plato-is-the-best/archive/master.zip)
+- **Offline:** [Download](https://github.com/SethClydesdale/tio-plato-is-the-best/archive/main.zip)
 
 If using offline, simply extract the folder and open the index.html file in the browser of your choice. That's it! As a bonus, you can set the folder icon to Tio using **tio-lg.ico** located under **aeon-system > images**.
 

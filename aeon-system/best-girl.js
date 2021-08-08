@@ -51,16 +51,19 @@
         tios.splice(n, 1);
       }
       
-      // wait a few (3s) before fading out the placeholder, so they have time to read the texts
-      setTimeout(function() {
-        bestGirl.placeholder.className += ' loaded'; // hide placeholder texts
-        bestGirl.nexTio(true); // show next tio
-        
-        // initialize interval for showing tios every X seconds (see duration at top of script)
-        bestGirl.isEternal = setInterval(function() {
-          bestGirl.nexTio();
-        }, bestGirl.duration);
-      }, 3000);
+      // wait until assets are loaded before fading out the placeholder
+      window.onload = function () {
+        // then wait a few (3s) before fading out the placeholder, so they have time to read the texts
+        setTimeout(function() {
+          bestGirl.placeholder.className += ' loaded'; // hide placeholder texts
+          bestGirl.nexTio(true); // show next tio
+
+          // initialize interval for showing tios every X seconds (see duration at top of script)
+          bestGirl.isEternal = setInterval(function() {
+            bestGirl.nexTio();
+          }, bestGirl.duration);
+        }, 3000);
+      };
       
       
       // randomize playlist order

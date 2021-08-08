@@ -89,6 +89,7 @@ body {
 #tio-placeholder:after {
   content:url(images/tio-and-mishy.png);
   display:block;
+  height:118px;
 }
 
 

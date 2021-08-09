@@ -16,7 +16,7 @@ Enjoy☆Tio!
 
 ## Who is Tio Plato?
 
-<img src="https://sethclydesdale.github.io/tio-plato-is-the-best/aeon-system/images/tio-plato.png" align="right">
+<img src="aeon-system/images/tio-plato.png" align="right">
 
 Tio Plato is a character from [Falcom's](https://www.falcom.co.jp/) [The Legend of Heroes: Trails series](https://www.thelegendofheroes.com/) ([<ruby>英雄伝説<rt>えいゆうでんせつ</rt></ruby> <ruby>軌跡<rt>きせき</rt></ruby>シリーズ](https://www.falcom.co.jp/kiseki/)) and is my most favorite character, EVER, if you haven't already noticed. She's smart, strong, cute, and above all else, is super passionate about her favorite mascot character, Mishy. She makes her first appearance in [Trails from Zero](https://www.thelegendofheroes.com/crossbell/) ([<ruby>零<rt>ゼロ</rt></ruby>の<ruby>軌跡<rt>きせき</rt></ruby>](https://www.falcom.co.jp/zeroao/)) and grows tremendously throughout the series as she struggles to find her place in the world and reclaim her lost emotions. Her tale is extremely touching... so I highly recommend playing Zero and Azure to experience her story and exceptional character development!
 

@@ -153,10 +153,86 @@
         document.body.style.cursor = 'none';
         delete bestGirl.mouseHide;
       }, 1000);
+    },
+    
+    
+    // info on best girl
+    // thank you kiseki wiki (https://kiseki.fandom.com/wiki/Tio_Plato)
+    tio_plato : {
+      va : {
+        ja : 'Kaori Mizuhashi',
+        en : 'Kayli Mills'
+      },
+      
+      birthday : 'S.1190',
+      birthplace : 'Remiferia',
+      
+      hobbies : 'Collecting Goodies, Browsing the Orbal Web, Pomtto!',
+      likes : 'Mishy, Kagemaru',
+      
+      gender : 'female',
+      height : '150cm',
+      sizes : { // for us people of culture
+        B : 72,
+        W : 51,
+        H : 75
+      },
+      
+      bloodtype : 'AB',
+      
+      weapon : 'Orbal Staff',
+      
+      orbment_type : {
+        zero_ao : 'Water',
+        sen_3 : 'Water, Mirage',
+        sen_4 : 'Water, Time',
+        haji : 'Water, Time'
+      },
+      
+      unbalance : {
+        slash : 'A',
+        thrust : 'B',
+        pierce : 'B',
+        strike : 'B'
+      },
+      
+      // The man, the legend, the scholar and translator of all things Tio, and of course, fellow Tiofriend.
+      // Thank you for all you do to bring us EVERYTHING Tio in English <3
+      biggest_fan : 'kitsune547'
     }
     
   };
   
   // start the slide show
   bestGirl.startShow();
+  
+  // console log easter egg for fellow developers
+  var img = new Image(),
+      tio = 'aeon-system/images/tio-double-ok.png';
+  
+  img.onload = function () {
+    // texts
+    console.log('%cTio Plato is the Best!',
+      'color:#39C;'+
+      'font-family:Arial;'+
+      'font-size:32px;'+
+      'font-weight:bold;'+
+      'text-shadow:#000 2px 2px 0px;'
+    );
+    
+    // image
+    console.log('%c ',
+      'font-size:1px;'+
+      'padding:' + this.height * .5 + 'px ' + this.width * .5 + 'px;'+
+      'background-size:' + this.width + 'px ' + this.height + 'px;'+
+      'background:url('+ tio +');'
+    );
+    
+    // additional info
+    console.log('You can see all of best girl\'s properties and functions by typing `bestGirl` or `bestGirl.tio_plato` in the console!');
+    console.log('For more detailed information, you can view the entire code on GitHub!\nhttps://github.com/SethClydesdale/tio-plato-is-the-best');
+    console.log('エンジョーイ☆ティオ～！');
+  };
+  
+  img.src = tio;
 }(window, document));

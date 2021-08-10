@@ -1,17 +1,17 @@
-﻿# Tio Plato is the Best
+﻿<img src="aeon-system/images/tio-and-mishy.png" align="left" height="85">
 
+# Tio Plato is the Best
 
-## About
-This is a small webpage/slideshow dedicated to my favorite character Tio Plato. It features 100+ images that contain Tio as well as 20+ music tracks from Zero/Azure (and 1 from CSIV), which can be played by clicking the little Tio sitting on the bottom right of the screen. Image and music order is randomized every time you visit, so it is different each time. Feel free to use it as a screen saver or to listen to some of the best tracks from Zero and Azure.
+This is a small webpage/slideshow dedicated to my favorite character Tio Plato. It features over 100+ images that contain Tio as well as 20+ music tracks from Zero/Azure (and 1 from CSIV), which can be played by clicking the little Tio sitting on the bottom right of the screen. Image and music order is randomized every time you visit, so it is different each time. Feel free to use it as a screen saver or to listen to some of the best tracks from Zero and Azure.
 
 You can use it online or offline via the following links.
 
 - **Online:** https://sethclydesdale.github.io/tio-plato-is-the-best/
 - **Offline:** [Download](https://github.com/SethClydesdale/tio-plato-is-the-best/archive/main.zip)
 
-If using offline, simply extract the folder and open the index.html file in the browser of your choice. That's it! As a bonus, you can set the folder icon to Tio using **tio-lg.ico** located under **aeon-system > images**.
+If using offline, simply extract the folder, open the index.html file in the browser of your choice, and enjoy Tio! As a bonus, you can set the folder icon (or shortcut if you made one) to Tio using **tio-lg.ico** located under **aeon-system > images**.
 
-Enjoy☆Tio!
+Enjoy☆Tio~!!
 
 
 ## Who is Tio Plato?
@@ -24,6 +24,16 @@ Tio Plato is a character from [Falcom's](https://www.falcom.co.jp/) [The Legend 
 ## Credits
 Music, Illustrations, etc. Copyright (c) [Nihon Falcom Corporation](https://www.falcom.co.jp/)
 
-Special thanks to Falcom for Tio Plato and of course, all the amazing music and games.
 
-Extra special thanks to Tio Plato!
+## Special Thanks
+
+- **Falcom** for Tio Plato and of course, all the amazing music and games.
+
+- **Tio Plato** for being the best and playing us music <3
+
+- **Mishy** for bringing Tio happiness and visitors to this repo.
+
+<p align="center">
+  <img src="aeon-system/images/sitting-tio.png" height="150">
+  <img src="aeon-system/images/sitting-mishy.png" height="150">
+</p>

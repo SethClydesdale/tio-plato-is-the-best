@@ -208,7 +208,7 @@
   
   // console log easter egg for fellow developers
   var img = new Image(),
-      tio = 'aeon-system/images/tio-double-ok.png';
+      tio = 'https://sethclydesdale.github.io/tio-plato-is-the-best/aeon-system/images/tio-double-ok.png';
   
   img.onload = function () {
     // texts

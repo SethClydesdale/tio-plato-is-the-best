@@ -15,6 +15,14 @@ body {
 }
 
 
+/* animations */
+@keyframes loading {
+   33% { content:"Now activating Aeon system.\APlease standby." }
+   66% { content:"Now activating Aeon system.\APlease standby.."; }
+  100% { content:"Now activating Aeon system.\APlease standby..."; }
+}
+
+
 /* our cute little Tio and Mishy who sit at the bottom of the screen */
 #tio, #mishy {
   position:fixed;
@@ -64,7 +72,7 @@ body {
   font-weight:bold;
   text-align:center;
   height:100px;
-  margin-top:-100px;
+  margin-top:-150px;
   position:fixed;
   top:50%;
   left:0;
@@ -87,9 +95,12 @@ body {
 }
 
 #tio-placeholder:after {
-  content:url(images/tio-and-mishy.png);
+  content:"Now activating Aeon system.\APlease standby.";
+  font-size:18px;
+  font-style:italic;
   display:block;
-  height:118px;
+  white-space:pre;
+  animation:loading 2s infinite;
 }
 
 

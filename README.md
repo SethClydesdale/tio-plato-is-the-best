@@ -33,6 +33,8 @@ Music, Illustrations, etc. Copyright (c) [Nihon Falcom Corporation](https://www.
 
 - **Mishy** for bringing Tio happiness and visitors to this repo.
 
+- [**waifu2x**](https://github.com/nagadomi/waifu2x) for upscaling Tio, so that we can enjoy her cuteness at higher resolutions.
+
 <p align="center">
   <img src="aeon-system/images/sitting-tio.png" height="150">
   <img src="aeon-system/images/sitting-mishy.png" height="150">

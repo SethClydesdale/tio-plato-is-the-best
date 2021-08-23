@@ -38,32 +38,183 @@
     
     // slide show initialization
     startShow : function () {
-      var tios = Array.prototype.slice.call(document.querySelectorAll('.tio')), // get all tios on the page and place them into an array for sorting
-          playlist = [], // temp playlist for sorting
-          n; // random index
+      // our tios and their background positions (the bg position applies focus to tio at lower resolutions)
+      var tios = [
+        '001|80% 5%',
+        '002|20% 10%',
+        '003|60% 20%',
+        '004|30% 0%',
+        '005|75% 0%',
+        '006|69% 30%',
+        '007|5% 15%',
+        '008|80% 45%',
+        '009|70% 90%',
+        '010|50% 0%',
+        '011|50% 80%',
+        '012|85% 15%',
+        '013|100% 20%',
+        '014|50% 0%',
+        '015|50% 0%',
+        '016|90% 100%',
+        '017|100% 35%',
+        '018|100% 30%',
+        '019|25% 30%',
+        '020|0% 60%',
+        '021|100% 35%',
+        '022|100% 70%',
+        '023|100% 35%',
+        '024|25% 50%',
+        '025|50% 20%',
+        '026|50% 75%',
+        '027|45% 15%',
+        '028|50% 25%',
+        '029|65% 35%',
+        '030|100% 40%',
+        '031|50% 50%',
+        '032|60% 50%',
+        '033|15% 60%',
+        '034|0% 60%',
+        '035|50% 30%',
+        '036|80% 50%',
+        '037|50% 50%',
+        '038|50% 0%',
+        '039|50% 15%',
+        '040|30% 30%',
+        '041|60% 25%',
+        '042|60% 30%',
+        '043|50% 50%',
+        '044|100% 55%',
+        '045|70% 80%',
+        '046|100% 55%',
+        '047|25% 60%',
+        '048|100% 35%',
+        '049|50% 50%',
+        '050|70% 65%',
+        '051|50% 50%',
+        '052|13% 45%',
+        '053|70% 10%',
+        '054|80% 80%',
+        '055|85% 60%',
+        '056|50% 60%',
+        '057|40% 20%',
+        '058|100% 35%',
+        '059|95% 30%',
+        '060|45% 25%',
+        '061|10% 80%',
+        '062|35% 50%',
+        '063|40% 80%',
+        '064|50% 50%',
+        '065|30% 0%',
+        '066|0% 65%',
+        '067|60% 50%',
+        '068|50% 50%',
+        '069|50% 90%',
+        '070|90% 0%',
+        '071|35% 45%',
+        '072|70% 30%',
+        '073|66% 65%',
+        '074|60% 30%',
+        '075|100% 25%',
+        '076|50% 50%',
+        '077|80% 40%',
+        '078|100% 30%',
+        '079|40% 20%',
+        '080|50% 50%',
+        '081|70% 50%',
+        '082|15% 75%',
+        '083|86% 24%',
+        '084|20% 50%',
+        '085|5% 24%',
+        '086|15% 60%',
+        '087|0% 35%',
+        '088|35% 35%',
+        '089|60% 25%',
+        '090|85% 25%',
+        '091|15% 15%',
+        '092|20% 7%',
+        '093|55% 50%',
+        '094|50% 70%',
+        '095|50% 50%',
+        '096|50% 40%',
+        '097|55% 35%',
+        '098|60% 36%',
+        '099|66% 25%',
+        '100|55% 35%',
+        '101|85% 5%',
+        '102|30% 25%',
+        '103|35% 20%',
+        '104|60% 10%',
+        '105|90% 25%',
+        '106|85% 20%',
+        '107|50% 25%',
+        '108|44% 50%',
+        '109|82% 62%',
+        '110|60% 35%',
+        '111|20% 80%',
+        '112|46% 25%',
+        '113|18% 40%',
+        '114|68% 40%',
+        '115|47% 43%',
+        '116|6% 60%',
+        '117|4% 35%',
+        '118|55% 5%',
+        '119|33% 50%',
+        '120|90% 35%',
+        '121|15% 25%',
+        '122|30% 35%',
+        '123|60% 60%',
+        '124|75% 30%',
+        '125|15% 30%',
+        '126|25% 20%',
+        '127|75% 50%',
+        '128|75% 50%',
+        '129|65% 25%',
+        '130|37% 45%',
+        '131|45% 55%',
+        '132|55% 50%',
+        '133|95% 50%',
+        '134|15% 20%',
+        '135|15% 50%',
+        '136|100% 80%',
+        '137|27% 70%',
+        '138|50% 40%',
+        '139|60% 20%',
+        '140|30% 100%'
+        
+      ], // get all tios on the page and place them into an array for sorting
+      TioPlato = document.createDocumentFragment(),
+      slideshow = document.getElementById('tio-plato'),
+      playlist = [], // temp playlist for sorting
+      n, newTio, data; // random index
       
       // randomize order of the slide show so it is different each time
       while (tios.length) {
-        n = Math.floor(Math.random() * tios.length);
+        n = bestGirl.debug ? 0 : Math.floor(Math.random() * tios.length);
+        data = tios[n].split('|');
         
-        bestGirl.tio.push(tios[n]);
+        // creates a new div with the following mark up to display our cute little tio
+        // <div class="tio" style="background-image:url(tios/tio-001.jpg); background-position:80% 5%;"></div>
+        newTio = document.createElement('DIV');
+        newTio.className = 'tio';
+        newTio.style.backgroundImage = 'url(tios/tio-' + data[0] + '.jpg)';
+        newTio.style.backgroundPosition = data[1];
+        TioPlato.appendChild(newTio);
         
+        // add this tio to the slides
+        bestGirl.tio.push(newTio);
+        
+        // removes the newly added tio from the creation queue
         tios.splice(n, 1);
       }
       
-      // wait until assets are loaded before fading out the placeholder
-      window.onload = function () {
-        // then wait a few (3s) before fading out the placeholder, so they have time to read the texts
-        setTimeout(function() {
-          bestGirl.placeholder.className += ' loaded'; // hide placeholder texts
-          bestGirl.nexTio(true); // show next tio
-
-          // initialize interval for showing tios every X seconds (see duration at top of script)
-          bestGirl.isEternal = setInterval(function() {
-            bestGirl.nexTio();
-          }, bestGirl.duration);
-        }, 3000);
-      };
+      // adds all of the tios to the document and begins preloading
+      slideshow.appendChild(TioPlato);
+      
+      // wait until assets are fully loaded or partially, before fading out the placeholder
+      window.onload = bestGirl.stopLoading;
+      
+      // maximum load time will be 30 seconds, afterwhich the slide show will start even if assets are still loading
+      bestGirl.loadingTimeout = setTimeout(bestGirl.stopLoading, 30000);
       
       
       // randomize playlist order
@@ -77,7 +228,7 @@
       
       // update playlist with new order and set default track + handlers
       bestGirl.playlist = playlist;
-      bestGirl.music.src = 'aeon-system/audio/' + bestGirl.playlist[bestGirl.track] + '.mp3';
+      bestGirl.music.getElementsByTagName('SOURCE')[0].src = 'aeon-system/audio/' + bestGirl.playlist[bestGirl.track] + '.mp3';
       bestGirl.music.onended = function () {
         var track = bestGirl.playlist[++bestGirl.track];
         
@@ -88,7 +239,9 @@
         }
         
         // play next track
-        this.src = 'aeon-system/audio/' + track + '.mp3';
+        this.pause();
+        this.getElementsByTagName('SOURCE')[0].src = 'aeon-system/audio/' + track + '.mp3';
+        this.load();
         this.play();
       };
       
@@ -123,6 +276,31 @@
       
       // finally show our beloved tio
       nexTio.className += ' actiove'; // acTIOve, yes a terrible pun, I know
+    },
+    
+    
+    // stops preloading and begins the slide show
+    stopLoading : function () {
+      if (/loading/.test(document.body.className)) {
+        document.body.className = document.body.className.replace('loading', '');
+        
+        // wait a few (3s) before fading out the placeholder, so they have time to read the texts
+        setTimeout(function() {
+          bestGirl.placeholder.className += ' loaded'; // hide placeholder texts
+          bestGirl.nexTio(true); // show next tio
+
+          // initialize interval for showing tios every X seconds (see duration at top of script)
+          bestGirl.isEternal = bestGirl.debug ? null : setInterval(function() {
+            bestGirl.nexTio();
+          }, bestGirl.duration);
+        }, 3000);
+        
+        // clear fallback timeout
+        if (bestGirl.loadingTimeout) {
+          clearTimeout(bestGirl.loadingTimeout);
+          delete bestGirl.loadingTimeout;
+        }
+      }
     },
     
     
@@ -199,8 +377,12 @@
       // The man, the legend, the scholar and translator of all things Tio, and of course, fellow Tiofriend.
       // Thank you for all you do to bring us EVERYTHING Tio in English <3
       biggest_fan : 'kitsune547'
-    }
+    },
     
+    // tells best girl if debug mode should be enabled
+    // debug mode places all images in numerical order and disables image rotation
+    // primarily, it's used for manually adjusting the background position of images, but may serve another purpose in the future, maybe.
+    debug : /\?debug/.test(window.location.search)
   };
   
   // start the slide show
@@ -232,6 +414,68 @@
     console.log('You can see all of best girl\'s properties and functions by typing `bestGirl` or `bestGirl.tio_plato` in the console!');
     console.log('For more detailed information, you can view the entire code on GitHub!\nhttps://github.com/SethClydesdale/tio-plato-is-the-best');
     console.log('エンジョーイ☆ティオ～！');
+    
+    // debug mode easter egg
+    if (bestGirl.debug) {
+      console.log('%c\nTio: Aeon system, active debug mode.', 'color:#39C;font-weight:bold;');
+      setTimeout(function() {
+        console.log('%cTio: Access database.', 'color:#39C;font-weight:bold;');
+        
+        setTimeout(function() {
+          console.log('%cTio: Search "Tio Plato"', 'color:#39C;font-weight:bold;');
+          
+          setTimeout(function() {
+            console.log('%cNow performing search...', 'color:#F00;font-weight:bold;');
+            
+            setTimeout(function() {
+              console.log('%cPlease standby.', 'color:#F00;font-weight:bold;');
+              
+              setTimeout(function() {
+                console.log('%c.', 'color:#F00;font-weight:bold;');
+                
+                setTimeout(function() {
+                  console.log('%c.', 'color:#F00;font-weight:bold;');
+                  
+                  setTimeout(function() {
+                    console.log('%c.', 'color:#F00;font-weight:bold;');
+                    
+                    setTimeout(function() {
+                      console.log('%cInformation on "Tio Plato" acquired.', 'color:#F00;font-weight:bold;');
+                      
+                      setTimeout(function() {
+                        console.log('%cNow printing...', 'color:#F00;font-weight:bold;');
+                        
+                        var time = 0, n = -1, k = [], i;
+                        
+                        for (i in bestGirl.tio_plato) {
+                          time += 1000;
+                          k.push(i);
+                          setTimeout(function() {
+                            console.log(k[++n] + ':', bestGirl.tio_plato[k[n]]);
+                          }, time);
+                        }
+                        
+                        setTimeout(function() {
+                          console.log('%cTio: ...', 'color:#39C;font-weight:bold;');
+                          
+                          setTimeout(function() {
+                            console.log('%cTio: W-Why are my sizes in here!?', 'color:#39C;font-weight:bold;');
+                            
+                            setTimeout(function() {
+                              console.log('%cTio: ..Chief Roberts has some explaining to do...!', 'color:#39C;font-weight:bold;');
+                            }, 4000);
+                          }, 3000);
+                        }, time + 1000);
+                      }, 1000);
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 3000);
+        }, 3000);
+      }, 3000);
+    }
   };
   
   img.src = tio;

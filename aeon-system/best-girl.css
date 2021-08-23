@@ -16,6 +16,18 @@ body {
 
 
 /* animations */
+@-webkit-keyframes loading {
+   33% { content:"Now activating Aeon system.\APlease standby." }
+   66% { content:"Now activating Aeon system.\APlease standby.."; }
+  100% { content:"Now activating Aeon system.\APlease standby..."; }
+}
+
+@-moz-keyframes loading {
+   33% { content:"Now activating Aeon system.\APlease standby." }
+   66% { content:"Now activating Aeon system.\APlease standby.."; }
+  100% { content:"Now activating Aeon system.\APlease standby..."; }
+}
+
 @keyframes loading {
    33% { content:"Now activating Aeon system.\APlease standby." }
    66% { content:"Now activating Aeon system.\APlease standby.."; }
@@ -56,7 +68,10 @@ body {
   bottom:0;
   visibility:hidden;
   opacity:0;
-  transition:1000ms;
+  -webkit-transition:1000ms;
+     -moz-transition:1000ms;
+      -ms-transition:1000ms;
+          transition:1000ms;
 }
 
 .tio.actiove { /* acTIOve... I'm sorry for the terrible pun m(__)m */
@@ -80,7 +95,14 @@ body {
   z-index:101;
   opacity:1;
   visibility:visible;
-  transition:1000ms;
+  -webkit-transition:1000ms;
+     -moz-transition:1000ms;
+      -ms-transition:1000ms;
+          transition:1000ms;
+  -webkit-transition-property:opacity, visibility;
+     -moz-transition-property:opacity, visibility;
+      -ms-transition-property:opacity, visibility;
+          transition-property:opacity, visibility;
   text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
@@ -100,7 +122,9 @@ body {
   font-style:italic;
   display:block;
   white-space:pre;
-  animation:loading 2s infinite;
+  -webkit-animation:loading 2s infinite;
+     -moz-animation:loading 2s infinite;
+          animation:loading 2s infinite;
 }
 
 

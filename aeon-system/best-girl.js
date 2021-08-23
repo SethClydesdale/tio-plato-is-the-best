@@ -226,9 +226,12 @@
         bestGirl.playlist.splice(n, 1);
       }
       
-      // update playlist with new order and set default track + handlers
+      // update playlist with new order and set default track
       bestGirl.playlist = playlist;
       bestGirl.music.getElementsByTagName('SOURCE')[0].src = 'aeon-system/audio/' + bestGirl.playlist[bestGirl.track] + '.mp3';
+      bestGirl.music.load();
+      
+      // handler for changing to the next song in the playlist
       bestGirl.music.onended = function () {
         var track = bestGirl.playlist[++bestGirl.track];
         

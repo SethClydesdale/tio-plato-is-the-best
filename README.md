@@ -2,7 +2,7 @@
 
 # Tio Plato is the Best
 
-This is a small webpage/slideshow dedicated to my favorite character Tio Plato. It features over 100+ images that contain Tio as well as 20+ music tracks from Zero/Azure (and 1 from CSIV), which can be played by clicking the little Tio sitting on the bottom right of the screen. Image and music order is randomized every time you visit, so it is different each time. Feel free to use it as a screen saver or to listen to some of the best tracks from Zero and Azure.
+This is a small webpage/slideshow dedicated to my favorite character Tio Plato. It features over 100+ images that contain Tio as well as 30+ music tracks from Zero/Azure/Hajimari (and 1 from CSIV), which can be played by clicking the little Tio sitting on the bottom right of the screen. Image and music order is randomized every time you visit, so it is different each time. Feel free to use it as a screen saver or to listen to some of the best tracks from Zero, Azure, and Hajimari.
 
 You can use it online or offline via the following links.
 

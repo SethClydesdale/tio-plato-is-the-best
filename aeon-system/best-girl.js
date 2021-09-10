@@ -11,7 +11,8 @@
     music : document.getElementById('music'), // music player
     sprite : document.getElementById('tio').getElementsByTagName('IMG')[0], // our cute little tio sitting on the bottom right
     track : 0, // current track (for the playlist below)
-    playlist : [ // some of my most favorite tracks from Zero/Ao (+CSIV's mystic core remix, cause mystic core is literally the best)
+    playlist : [ // some of my most favorite tracks from Zero/Ao/Haji (+CSIV's mystic core remix, cause mystic core is literally the best)
+      // Zero/Ao
       'A Light Illuminating The Depths -Super Arrange-',
       'A Light Illuminating The Depths',
       'Advancing Bravery',
@@ -27,12 +28,25 @@
       'Inevitable Struggle',
       'Intense Chase -Super Arrange-',
       'Intense Chase',
-      'Mystic Core -SenVer-',
+      'Mystic Core -SenVer-', // CS4
       'Mystic Core',
       'Seize The Truth!',
       'Unfathomed Force',
       'way of life -Full Version-',
-      'Zero no Kiseki'
+      'Zero no Kiseki',
+      // Hajimari
+      'Aim a Gun at the Bullet',
+      'Bad Dream Invasion',
+      'Be Caught Up!',
+      'Elegant Prowess',
+      'Emergency Order',
+      'Flash Your Fighting Spirit',
+      'NO END NO WORLD -Instrumental-',
+      'NO END NO WORLD',
+      'Now, At the Beginning',
+      'Stand Up Again and Again!',
+      'Sword of Swords',
+      'The Destination of FATE'
     ],
     
     
@@ -179,13 +193,23 @@
         '137|27% 70%',
         '138|50% 40%',
         '139|60% 20%',
-        '140|30% 100%'
+        '140|30% 100%',
+        '141|48% 60%',
+        '142|52% 27%',
+        '143|52% 45%',
+        '144|25% 45%',
+        '145|80% 20%',
+        '146|40% 10%',
+        '147|50% 10%',
+        '148|50% 10%',
+        '149|30% 10%',
+        '150|40% 10%'
         
       ], // get all tios on the page and place them into an array for sorting
       TioPlato = document.createDocumentFragment(),
       slideshow = document.getElementById('tio-plato'),
       playlist = [], // temp playlist for sorting
-      n, newTio, data; // random index
+      n, newTio, data;
       
       // randomize order of the slide show so it is different each time
       while (tios.length) {
@@ -215,6 +239,15 @@
       
       // maximum load time will be 30 seconds, afterwhich the slide show will start even if assets are still loading
       bestGirl.loadingTimeout = setTimeout(bestGirl.stopLoading, 30000);
+      
+      // hide the tiotip after 5 seconds
+      setTimeout(function () {
+        var tio = document.getElementById('tio');
+        
+        if (/tiotip/.test(tio.className)) {
+          tio.className = '';
+        }
+      }, 5000);
       
       
       // randomize playlist order
@@ -308,7 +341,7 @@
     
     
     // Tio plays us some of the best songs from Zero and Azure + that 1 CSIV remix
-    playMusic : function () {
+    playMusic : function (tio) {
       if (bestGirl.music.paused) { // play if paused
         bestGirl.music.play();
         // light up Tio's cat ear sensors to show she's using the aeon system to play us some awesome tracks
@@ -317,6 +350,11 @@
       } else { // pause if playing
         bestGirl.music.pause();
         bestGirl.sprite.src = 'aeon-system/images/sitting-tio.png';
+      }
+      
+      // hide the tiotip
+      if (/tiotip/.test(tio.parentNode.className)) {
+        tio.parentNode.className = '';
       }
     },
     

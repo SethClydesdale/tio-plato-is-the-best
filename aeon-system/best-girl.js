@@ -343,6 +343,10 @@
     // Tio plays us some of the best songs from Zero and Azure + that 1 CSIV remix
     playMusic : function (tio) {
       if (bestGirl.music.paused) { // play if paused
+        if (bestGirl.music.readyState == 0) {
+          bestGirl.music.load(); // attempt loading audio again if failed (had it happen before, but cannot replicate, hopefully this fixes it)
+        }
+        
         bestGirl.music.play();
         // light up Tio's cat ear sensors to show she's using the aeon system to play us some awesome tracks
         bestGirl.sprite.src = 'aeon-system/images/sitting-tio-aeon-system.png';
